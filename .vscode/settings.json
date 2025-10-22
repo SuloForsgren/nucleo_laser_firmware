@@ -1,0 +1,6 @@
+{
+    "makefile.configureOnOpen": false,
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH};C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\STMicroelectronics\\STM32Cube\\STM32CubeProgrammer\\bin;C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\14.3 rel1\\bin"
+    }
+}
