@@ -5,6 +5,6 @@
 
 void gpio_init();
 void gpio_toggle();
-
+void start_clocks();
 
 #endif

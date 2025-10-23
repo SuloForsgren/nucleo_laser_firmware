@@ -1,0 +1,409 @@
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"motor.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/motor.c"
+  20              		.section	.text.motor_init,"ax",%progbits
+  21              		.align	1
+  22              		.global	motor_init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	motor_init:
+  28              	.LVL0:
+  29              	.LFB134:
+   1:Core/Src/motor.c **** #include "motor.h"
+   2:Core/Src/motor.c **** 
+   3:Core/Src/motor.c **** void motor_init(TIM_HandleTypeDef *htim1, TIM_HandleTypeDef *htim2, TIM_HandleTypeDef *htim3) 
+   4:Core/Src/motor.c **** {
+  30              		.loc 1 4 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 32
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 4 1 is_stmt 0 view .LVU1
+  35 0000 70B5     		push	{r4, r5, r6, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 4, -16
+  39              		.cfi_offset 5, -12
+  40              		.cfi_offset 6, -8
+  41              		.cfi_offset 14, -4
+  42 0002 88B0     		sub	sp, sp, #32
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 48
+  45 0004 0646     		mov	r6, r0
+  46 0006 0D46     		mov	r5, r1
+  47 0008 1446     		mov	r4, r2
+   5:Core/Src/motor.c ****     htim1->Instance = TIM1;
+  48              		.loc 1 5 5 is_stmt 1 view .LVU2
+  49              		.loc 1 5 21 is_stmt 0 view .LVU3
+  50 000a 3A4B     		ldr	r3, .L21
+  51 000c 0360     		str	r3, [r0]
+   6:Core/Src/motor.c ****     htim2->Instance = TIM2;
+  52              		.loc 1 6 5 is_stmt 1 view .LVU4
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 2
+
+
+  53              		.loc 1 6 21 is_stmt 0 view .LVU5
+  54 000e 4FF08043 		mov	r3, #1073741824
+  55 0012 0B60     		str	r3, [r1]
+   7:Core/Src/motor.c ****     htim3->Instance = TIM3;
+  56              		.loc 1 7 5 is_stmt 1 view .LVU6
+  57              		.loc 1 7 21 is_stmt 0 view .LVU7
+  58 0014 03F58063 		add	r3, r3, #1024
+  59 0018 1360     		str	r3, [r2]
+   8:Core/Src/motor.c **** 
+   9:Core/Src/motor.c ****     htim1->Init.Prescaler = 0;
+  60              		.loc 1 9 5 is_stmt 1 view .LVU8
+  61              		.loc 1 9 27 is_stmt 0 view .LVU9
+  62 001a 0023     		movs	r3, #0
+  63 001c 4360     		str	r3, [r0, #4]
+  10:Core/Src/motor.c ****     htim2->Init.Prescaler = 0;
+  64              		.loc 1 10 5 is_stmt 1 view .LVU10
+  65              		.loc 1 10 27 is_stmt 0 view .LVU11
+  66 001e 4B60     		str	r3, [r1, #4]
+  11:Core/Src/motor.c ****     htim3->Init.Prescaler = 0;
+  67              		.loc 1 11 5 is_stmt 1 view .LVU12
+  68              		.loc 1 11 27 is_stmt 0 view .LVU13
+  69 0020 5360     		str	r3, [r2, #4]
+  12:Core/Src/motor.c **** 
+  13:Core/Src/motor.c ****     htim1->Init.CounterMode = TIM_COUNTERMODE_UP;
+  70              		.loc 1 13 5 is_stmt 1 view .LVU14
+  71              		.loc 1 13 29 is_stmt 0 view .LVU15
+  72 0022 8360     		str	r3, [r0, #8]
+  14:Core/Src/motor.c ****     htim2->Init.CounterMode = TIM_COUNTERMODE_UP;
+  73              		.loc 1 14 5 is_stmt 1 view .LVU16
+  74              		.loc 1 14 29 is_stmt 0 view .LVU17
+  75 0024 8B60     		str	r3, [r1, #8]
+  15:Core/Src/motor.c ****     htim3->Init.CounterMode = TIM_COUNTERMODE_UP;
+  76              		.loc 1 15 5 is_stmt 1 view .LVU18
+  77              		.loc 1 15 29 is_stmt 0 view .LVU19
+  78 0026 9360     		str	r3, [r2, #8]
+  16:Core/Src/motor.c **** 
+  17:Core/Src/motor.c ****     htim1->Init.Period = ARR_TIM1;
+  79              		.loc 1 17 5 is_stmt 1 view .LVU20
+  80              		.loc 1 17 24 is_stmt 0 view .LVU21
+  81 0028 40F2A312 		movw	r2, #419
+  82              	.LVL1:
+  83              		.loc 1 17 24 view .LVU22
+  84 002c C260     		str	r2, [r0, #12]
+  18:Core/Src/motor.c ****     htim2->Init.Period = ARR_TIM2;
+  85              		.loc 1 18 5 is_stmt 1 view .LVU23
+  86              		.loc 1 18 24 is_stmt 0 view .LVU24
+  87 002e D122     		movs	r2, #209
+  88 0030 CA60     		str	r2, [r1, #12]
+  19:Core/Src/motor.c ****     htim3->Init.Period = ARR_TIM2;
+  89              		.loc 1 19 5 is_stmt 1 view .LVU25
+  90              		.loc 1 19 24 is_stmt 0 view .LVU26
+  91 0032 E260     		str	r2, [r4, #12]
+  20:Core/Src/motor.c **** 
+  21:Core/Src/motor.c ****     htim1->Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  92              		.loc 1 21 5 is_stmt 1 view .LVU27
+  93              		.loc 1 21 31 is_stmt 0 view .LVU28
+  94 0034 0361     		str	r3, [r0, #16]
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 3
+
+
+  22:Core/Src/motor.c ****     htim2->Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  95              		.loc 1 22 5 is_stmt 1 view .LVU29
+  96              		.loc 1 22 31 is_stmt 0 view .LVU30
+  97 0036 0B61     		str	r3, [r1, #16]
+  23:Core/Src/motor.c ****     htim3->Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  98              		.loc 1 23 5 is_stmt 1 view .LVU31
+  99              		.loc 1 23 31 is_stmt 0 view .LVU32
+ 100 0038 2361     		str	r3, [r4, #16]
+  24:Core/Src/motor.c **** 
+  25:Core/Src/motor.c ****     htim1->Init.RepetitionCounter = 0;
+ 101              		.loc 1 25 5 is_stmt 1 view .LVU33
+ 102              		.loc 1 25 35 is_stmt 0 view .LVU34
+ 103 003a 4361     		str	r3, [r0, #20]
+  26:Core/Src/motor.c ****     htim2->Init.RepetitionCounter = 0;
+ 104              		.loc 1 26 5 is_stmt 1 view .LVU35
+ 105              		.loc 1 26 35 is_stmt 0 view .LVU36
+ 106 003c 4B61     		str	r3, [r1, #20]
+  27:Core/Src/motor.c ****     htim3->Init.RepetitionCounter = 0;
+ 107              		.loc 1 27 5 is_stmt 1 view .LVU37
+ 108              		.loc 1 27 35 is_stmt 0 view .LVU38
+ 109 003e 6361     		str	r3, [r4, #20]
+  28:Core/Src/motor.c ****     
+  29:Core/Src/motor.c ****     htim1->Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+ 110              		.loc 1 29 5 is_stmt 1 view .LVU39
+ 111              		.loc 1 29 35 is_stmt 0 view .LVU40
+ 112 0040 8361     		str	r3, [r0, #24]
+  30:Core/Src/motor.c ****     htim2->Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+ 113              		.loc 1 30 5 is_stmt 1 view .LVU41
+ 114              		.loc 1 30 35 is_stmt 0 view .LVU42
+ 115 0042 8B61     		str	r3, [r1, #24]
+  31:Core/Src/motor.c ****     htim3->Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+ 116              		.loc 1 31 5 is_stmt 1 view .LVU43
+ 117              		.loc 1 31 35 is_stmt 0 view .LVU44
+ 118 0044 A361     		str	r3, [r4, #24]
+  32:Core/Src/motor.c **** 
+  33:Core/Src/motor.c ****     if(HAL_TIM_PWM_Init(htim1) != HAL_OK) Error_Handler();
+ 119              		.loc 1 33 5 is_stmt 1 view .LVU45
+ 120              		.loc 1 33 8 is_stmt 0 view .LVU46
+ 121 0046 FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 122              	.LVL2:
+ 123              		.loc 1 33 7 discriminator 1 view .LVU47
+ 124 004a 0028     		cmp	r0, #0
+ 125 004c 37D1     		bne	.L12
+ 126              	.L2:
+  34:Core/Src/motor.c ****     if(HAL_TIM_PWM_Init(htim2) != HAL_OK) Error_Handler();
+ 127              		.loc 1 34 5 is_stmt 1 view .LVU48
+ 128              		.loc 1 34 8 is_stmt 0 view .LVU49
+ 129 004e 2846     		mov	r0, r5
+ 130 0050 FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 131              	.LVL3:
+ 132              		.loc 1 34 7 discriminator 1 view .LVU50
+ 133 0054 0028     		cmp	r0, #0
+ 134 0056 35D1     		bne	.L13
+ 135              	.L3:
+  35:Core/Src/motor.c ****     if(HAL_TIM_PWM_Init(htim3) != HAL_OK) Error_Handler();
+ 136              		.loc 1 35 5 is_stmt 1 view .LVU51
+ 137              		.loc 1 35 8 is_stmt 0 view .LVU52
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 4
+
+
+ 138 0058 2046     		mov	r0, r4
+ 139 005a FFF7FEFF 		bl	HAL_TIM_PWM_Init
+ 140              	.LVL4:
+ 141              		.loc 1 35 7 discriminator 1 view .LVU53
+ 142 005e 0028     		cmp	r0, #0
+ 143 0060 33D1     		bne	.L14
+ 144              	.L4:
+  36:Core/Src/motor.c **** 
+  37:Core/Src/motor.c ****     TIM_OC_InitTypeDef sConfigOC = {0};
+ 145              		.loc 1 37 5 is_stmt 1 view .LVU54
+ 146              		.loc 1 37 24 is_stmt 0 view .LVU55
+ 147 0062 01A9     		add	r1, sp, #4
+ 148 0064 0022     		movs	r2, #0
+ 149 0066 0192     		str	r2, [sp, #4]
+ 150 0068 4A60     		str	r2, [r1, #4]
+ 151 006a 8A60     		str	r2, [r1, #8]
+ 152 006c CA60     		str	r2, [r1, #12]
+ 153 006e 0A61     		str	r2, [r1, #16]
+ 154 0070 4A61     		str	r2, [r1, #20]
+ 155 0072 8A61     		str	r2, [r1, #24]
+  38:Core/Src/motor.c ****     sConfigOC.OCMode = TIM_OCMODE_PWM1;
+ 156              		.loc 1 38 5 is_stmt 1 view .LVU56
+ 157              		.loc 1 38 22 is_stmt 0 view .LVU57
+ 158 0074 6023     		movs	r3, #96
+ 159 0076 0193     		str	r3, [sp, #4]
+  39:Core/Src/motor.c ****     sConfigOC.Pulse = ARR_TIM2;
+ 160              		.loc 1 39 5 is_stmt 1 view .LVU58
+ 161              		.loc 1 39 21 is_stmt 0 view .LVU59
+ 162 0078 D123     		movs	r3, #209
+ 163 007a 0293     		str	r3, [sp, #8]
+  40:Core/Src/motor.c ****     sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+ 164              		.loc 1 40 5 is_stmt 1 view .LVU60
+  41:Core/Src/motor.c ****     sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+ 165              		.loc 1 41 5 view .LVU61
+  42:Core/Src/motor.c **** 
+  43:Core/Src/motor.c ****     if(HAL_TIM_PWM_ConfigChannel(htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+ 166              		.loc 1 43 5 view .LVU62
+ 167              		.loc 1 43 8 is_stmt 0 view .LVU63
+ 168 007c 3046     		mov	r0, r6
+ 169 007e FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 170              	.LVL5:
+ 171              		.loc 1 43 7 discriminator 1 view .LVU64
+ 172 0082 28BB     		cbnz	r0, .L15
+ 173              	.L5:
+  44:Core/Src/motor.c ****     if(HAL_TIM_PWM_ConfigChannel(htim2, &sConfigOC, TIM_CHANNEL_3) != HAL_OK) Error_Handler();
+ 174              		.loc 1 44 5 is_stmt 1 view .LVU65
+ 175              		.loc 1 44 8 is_stmt 0 view .LVU66
+ 176 0084 0822     		movs	r2, #8
+ 177 0086 01A9     		add	r1, sp, #4
+ 178 0088 2846     		mov	r0, r5
+ 179 008a FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 180              	.LVL6:
+ 181              		.loc 1 44 7 discriminator 1 view .LVU67
+ 182 008e 10BB     		cbnz	r0, .L16
+ 183              	.L6:
+  45:Core/Src/motor.c ****     if(HAL_TIM_PWM_ConfigChannel(htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+ 184              		.loc 1 45 5 is_stmt 1 view .LVU68
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 5
+
+
+ 185              		.loc 1 45 8 is_stmt 0 view .LVU69
+ 186 0090 0022     		movs	r2, #0
+ 187 0092 01A9     		add	r1, sp, #4
+ 188 0094 2046     		mov	r0, r4
+ 189 0096 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
+ 190              	.LVL7:
+ 191              		.loc 1 45 7 discriminator 1 view .LVU70
+ 192 009a F8B9     		cbnz	r0, .L17
+ 193              	.L7:
+  46:Core/Src/motor.c ****     
+  47:Core/Src/motor.c ****     if(HAL_TIM_PWM_Start(htim1, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+ 194              		.loc 1 47 5 is_stmt 1 view .LVU71
+ 195              		.loc 1 47 8 is_stmt 0 view .LVU72
+ 196 009c 0021     		movs	r1, #0
+ 197 009e 3046     		mov	r0, r6
+ 198 00a0 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 199              	.LVL8:
+ 200              		.loc 1 47 7 discriminator 1 view .LVU73
+ 201 00a4 E8B9     		cbnz	r0, .L18
+ 202              	.L8:
+  48:Core/Src/motor.c ****     if(HAL_TIM_PWM_Start(htim2, TIM_CHANNEL_3) != HAL_OK) Error_Handler();
+ 203              		.loc 1 48 5 is_stmt 1 view .LVU74
+ 204              		.loc 1 48 8 is_stmt 0 view .LVU75
+ 205 00a6 0821     		movs	r1, #8
+ 206 00a8 2846     		mov	r0, r5
+ 207 00aa FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 208              	.LVL9:
+ 209              		.loc 1 48 7 discriminator 1 view .LVU76
+ 210 00ae D8B9     		cbnz	r0, .L19
+ 211              	.L9:
+  49:Core/Src/motor.c ****     if(HAL_TIM_PWM_Start(htim3, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+ 212              		.loc 1 49 5 is_stmt 1 view .LVU77
+ 213              		.loc 1 49 8 is_stmt 0 view .LVU78
+ 214 00b0 0021     		movs	r1, #0
+ 215 00b2 2046     		mov	r0, r4
+ 216 00b4 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 217              	.LVL10:
+ 218              		.loc 1 49 7 discriminator 1 view .LVU79
+ 219 00b8 C8B9     		cbnz	r0, .L20
+ 220              	.L1:
+  50:Core/Src/motor.c **** }
+ 221              		.loc 1 50 1 view .LVU80
+ 222 00ba 08B0     		add	sp, sp, #32
+ 223              	.LCFI2:
+ 224              		.cfi_remember_state
+ 225              		.cfi_def_cfa_offset 16
+ 226              		@ sp needed
+ 227 00bc 70BD     		pop	{r4, r5, r6, pc}
+ 228              	.LVL11:
+ 229              	.L12:
+ 230              	.LCFI3:
+ 231              		.cfi_restore_state
+  33:Core/Src/motor.c ****     if(HAL_TIM_PWM_Init(htim2) != HAL_OK) Error_Handler();
+ 232              		.loc 1 33 43 is_stmt 1 discriminator 1 view .LVU81
+ 233 00be FFF7FEFF 		bl	Error_Handler
+ 234              	.LVL12:
+ 235 00c2 C4E7     		b	.L2
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 6
+
+
+ 236              	.L13:
+  34:Core/Src/motor.c ****     if(HAL_TIM_PWM_Init(htim3) != HAL_OK) Error_Handler();
+ 237              		.loc 1 34 43 discriminator 1 view .LVU82
+ 238 00c4 FFF7FEFF 		bl	Error_Handler
+ 239              	.LVL13:
+ 240 00c8 C6E7     		b	.L3
+ 241              	.L14:
+  35:Core/Src/motor.c **** 
+ 242              		.loc 1 35 43 discriminator 1 view .LVU83
+ 243 00ca FFF7FEFF 		bl	Error_Handler
+ 244              	.LVL14:
+ 245 00ce C8E7     		b	.L4
+ 246              	.L15:
+  43:Core/Src/motor.c ****     if(HAL_TIM_PWM_ConfigChannel(htim2, &sConfigOC, TIM_CHANNEL_3) != HAL_OK) Error_Handler();
+ 247              		.loc 1 43 79 discriminator 1 view .LVU84
+ 248 00d0 FFF7FEFF 		bl	Error_Handler
+ 249              	.LVL15:
+ 250 00d4 D6E7     		b	.L5
+ 251              	.L16:
+  44:Core/Src/motor.c ****     if(HAL_TIM_PWM_ConfigChannel(htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+ 252              		.loc 1 44 79 discriminator 1 view .LVU85
+ 253 00d6 FFF7FEFF 		bl	Error_Handler
+ 254              	.LVL16:
+ 255 00da D9E7     		b	.L6
+ 256              	.L17:
+  45:Core/Src/motor.c ****     
+ 257              		.loc 1 45 79 discriminator 1 view .LVU86
+ 258 00dc FFF7FEFF 		bl	Error_Handler
+ 259              	.LVL17:
+ 260 00e0 DCE7     		b	.L7
+ 261              	.L18:
+  47:Core/Src/motor.c ****     if(HAL_TIM_PWM_Start(htim2, TIM_CHANNEL_3) != HAL_OK) Error_Handler();
+ 262              		.loc 1 47 59 discriminator 1 view .LVU87
+ 263 00e2 FFF7FEFF 		bl	Error_Handler
+ 264              	.LVL18:
+ 265 00e6 DEE7     		b	.L8
+ 266              	.L19:
+  48:Core/Src/motor.c ****     if(HAL_TIM_PWM_Start(htim3, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+ 267              		.loc 1 48 59 discriminator 1 view .LVU88
+ 268 00e8 FFF7FEFF 		bl	Error_Handler
+ 269              	.LVL19:
+ 270 00ec E0E7     		b	.L9
+ 271              	.L20:
+  49:Core/Src/motor.c **** }
+ 272              		.loc 1 49 59 discriminator 1 view .LVU89
+ 273 00ee FFF7FEFF 		bl	Error_Handler
+ 274              	.LVL20:
+ 275              		.loc 1 50 1 is_stmt 0 view .LVU90
+ 276 00f2 E2E7     		b	.L1
+ 277              	.L22:
+ 278              		.align	2
+ 279              	.L21:
+ 280 00f4 00000140 		.word	1073807360
+ 281              		.cfi_endproc
+ 282              	.LFE134:
+ 284              		.section	.text.motor_drive,"ax",%progbits
+ 285              		.align	1
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 7
+
+
+ 286              		.global	motor_drive
+ 287              		.syntax unified
+ 288              		.thumb
+ 289              		.thumb_func
+ 291              	motor_drive:
+ 292              	.LFB135:
+  51:Core/Src/motor.c **** 
+  52:Core/Src/motor.c **** 
+  53:Core/Src/motor.c **** void motor_drive() 
+  54:Core/Src/motor.c **** {
+ 293              		.loc 1 54 1 is_stmt 1 view -0
+ 294              		.cfi_startproc
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+ 297              		@ link register save eliminated.
+  55:Core/Src/motor.c **** 
+  56:Core/Src/motor.c **** }...
+ 298              		.loc 1 56 1 view .LVU92
+ 299 0000 7047     		bx	lr
+ 300              		.cfi_endproc
+ 301              	.LFE135:
+ 303              		.text
+ 304              	.Letext0:
+ 305              		.file 2 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 306              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 307              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 308              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 309              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 310              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 311              		.file 8 "Core/Inc/main.h"
+ARM GAS  C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 motor.c
+C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s:21     .text.motor_init:00000000 $t
+C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s:27     .text.motor_init:00000000 motor_init
+C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s:280    .text.motor_init:000000f4 $d
+C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s:285    .text.motor_drive:00000000 $t
+C:\Users\sulof\AppData\Local\Temp\ccjIfah8.s:291    .text.motor_drive:00000000 motor_drive
+
+UNDEFINED SYMBOLS
+HAL_TIM_PWM_Init
+HAL_TIM_PWM_ConfigChannel
+HAL_TIM_PWM_Start
+Error_Handler

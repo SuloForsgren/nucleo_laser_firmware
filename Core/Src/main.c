@@ -1,5 +1,6 @@
 #include "main.h"
 #include "gpio.h"
+#include "motor.h"
 
 void SystemClock_Config(void);
 
@@ -9,6 +10,12 @@ int main(void)
   HAL_Init();
   SystemClock_Config();
   gpio_init();
+
+  TIM_HandleTypeDef htim1;
+  TIM_HandleTypeDef htim2;
+  TIM_HandleTypeDef htim3;
+
+  motor_init(&htim1, &htim2, &htim3);
 
   while (1)
   {

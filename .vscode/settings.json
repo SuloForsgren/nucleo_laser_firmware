@@ -4,6 +4,8 @@
         "PATH": "${env:PATH};C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\STMicroelectronics\\STM32Cube\\STM32CubeProgrammer\\bin;C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\14.3 rel1\\bin"
     },
     "files.associations": {
-        "stm32f4xx_hal.h": "c"
+        "stm32f4xx_hal.h": "c",
+        "motor.h": "c",
+        "stm32f446xx.h": "c"
     }
 }
